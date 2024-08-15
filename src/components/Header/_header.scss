@@ -1,0 +1,55 @@
+.header {
+  background-color: $primary-color;
+  color: $font-color;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $accent-color;
+    text-transform: uppercase;
+  }
+
+  .nav {
+    flex-grow: 1;
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          font-weight: bold;
+          color: $font-color;
+          text-decoration: none;
+          font-size: 1rem;
+          padding: 0.5rem;
+          text-transform: uppercase;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $accent-color;
+          }
+        }
+      }
+    }
+  }
+}
+

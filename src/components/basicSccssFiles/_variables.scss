@@ -1,0 +1,45 @@
+$primary-color: #0f0f0f;
+$secondary-color: #1e1e1e;
+$accent-color: #4caf50; 
+$darker-green-color: #377e3a;
+$font-color: #fff; 
+
+
+@font-face {
+    font-family: 'Sora';
+    src: url('../../src/assets/fonts/Sora-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Sora';
+    src: url('../../src/assets/fonts/Sora-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  
+  @font-face {
+    font-family: 'Sora';
+    src: url('../../src/assets/fonts/Sora-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Sora';
+    src: url('../../src/assets/fonts/Sora-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Metavers';
+    src: url('../../src/assets/fonts/Metavers.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  $primary-font-family: 'Sora', sans-serif;
+  $metavers-font-family: 'Metavers', sans-serif;

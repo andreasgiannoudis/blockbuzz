@@ -1,0 +1,56 @@
+.cta-newsletter {
+    background-color: $secondary-color;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 20px;
+  
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  
+    .cta-title {
+      font-size: 2rem;
+      color: $font-color;
+      margin-bottom: 1rem;
+    }
+  
+    .cta-description {
+      font-size: 1.2rem;
+      color: #a5a5a5;
+      margin-bottom: 2rem;
+    }
+  
+    .cta-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+  
+      .cta-input {
+        flex: 1;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+        max-width: 300px;
+      }
+  
+      .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        background-color: $accent-color;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: $darker-green-color;
+        }
+      }
+    }
+  }
+  
