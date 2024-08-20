@@ -21,15 +21,18 @@ const CryptoNews = () => {
         return;
       }
 
+      // Fetching cryptocurrency news from CoinMarketCap API
       const cryptoResponse = await axios.get(
-        `https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=${apiKey}`
+        `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=${apiKey}&limit=10`
       );
 
-      if (cryptoResponse.data.status !== 'ok') {
-        throw new Error(`NewsAPI error: ${cryptoResponse.data.code}`);
-      }
+      // Mapping the response to match the expected structure
+      const latestCryptoNews = cryptoResponse.data.data.map((crypto) => ({
+        title: crypto.name + " (" + crypto.symbol + ") - Latest Update",
+        url: `https://coinmarketcap.com/currencies/${crypto.slug}/`,
+        urlToImage: `https://s2.coinmarketcap.com/static/img/coins/64x64/${crypto.id}.png`,
+      }));
 
-      const latestCryptoNews = cryptoResponse.data.articles.slice(0, 10);
       setCryptoNews(latestCryptoNews);
       localStorage.setItem('cryptoNews', JSON.stringify(latestCryptoNews));
     } catch (error) {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const BlockchainNewsSection = ({id}) => {
+const BlockchainNewsSection = ({ id }) => {
   const [blockchainNews, setBlockchainNews] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -21,15 +21,18 @@ const BlockchainNewsSection = ({id}) => {
         return;
       }
 
+      // Using CoinMarketCap API for news (adjust the endpoint if necessary)
       const blockchainResponse = await axios.get(
-        `https://newsapi.org/v2/everything?q=blockchain&apiKey=${apiKey}`
+        `https://pro-api.coinmarketcap.com/v1/cryptocurrency/news?CMC_PRO_API_KEY=${apiKey}&limit=10`
       );
 
-      if (blockchainResponse.data.status !== 'ok') {
-        throw new Error(`NewsAPI error: ${blockchainResponse.data.code}`);
-      }
+      // Assuming the API returns articles in a `data` array
+      const latestBlockchainNews = blockchainResponse.data.data.slice(0, 10).map(article => ({
+        title: article.title,
+        url: article.url,
+        urlToImage: article.image_url, // Assuming there's an image URL field
+      }));
 
-      const latestBlockchainNews = blockchainResponse.data.articles.slice(0, 10);
       setBlockchainNews(latestBlockchainNews);
       localStorage.setItem('blockchainNews', JSON.stringify(latestBlockchainNews));
     } catch (error) {

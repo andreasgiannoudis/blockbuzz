@@ -21,15 +21,18 @@ const AiNewsSection = () => {
         return;
       }
 
+      // CoinMarketCap API endpoint for news
       const aiResponse = await axios.get(
-        `https://newsapi.org/v2/everything?q=artificial%20intelligence&apiKey=${apiKey}`
+        `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=${apiKey}&limit=10`
       );
 
-      if (aiResponse.data.status !== 'ok') {
-        throw new Error(`NewsAPI error: ${aiResponse.data.code}`);
-      }
+      // Assuming CoinMarketCap returns news articles within a `data` field
+      const latestAiNews = aiResponse.data.data.slice(0, 10).map(coin => ({
+        title: coin.name + ' - ' + coin.symbol,
+        url: `https://coinmarketcap.com/currencies/${coin.slug}/`,
+        urlToImage: coin.logo, // You might need to handle images differently depending on the API response
+      }));
 
-      const latestAiNews = aiResponse.data.articles.slice(0, 10);
       setAiNews(latestAiNews);
       localStorage.setItem('aiNews', JSON.stringify(latestAiNews));
     } catch (error) {
