@@ -17,10 +17,10 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path='/about' element={<About />} />
+        <Route path="/blockbuzz/" element={<HomePage />} />
+        <Route path='/blockbuzz/contact' element={<Contact />} />
+        <Route path="/blockbuzz/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path='/blockbuzz/about' element={<About />} />
       </Routes>
 
       <Footer />
