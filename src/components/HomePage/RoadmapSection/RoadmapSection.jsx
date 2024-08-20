@@ -6,7 +6,7 @@ function RoadmapSection() {
       projectVersion: 'Version 1',
       description: 'This version includes the initial launch features such as AI news, Blockchain news, BTC/ETH prices, Crypto stats, and a newsletter CTA.',
       features: [
-        'AI, Blockchain, NFT news',
+        'AI, Blockchain, Cryptocurrency news',
         'Crypto prices',
         'Crypto stats',
         'Newsletter'
