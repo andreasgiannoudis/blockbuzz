@@ -10,9 +10,9 @@ const Footer = () => {
         
         <nav className="footer-nav">
           <ul>
-            <Link to="/blockbuzz/about" className="footer-link"><li>About us</li></Link>
-            <Link to="/blockbuzz/contact" className="footer-link"><li>Contact</li></Link>
-            <Link to="/blockbuzz/privacy-policy" className="footer-link"><li>Privacy Policy</li></Link>
+            <Link to="/about" className="footer-link"><li>About us</li></Link>
+            <Link to="/contact" className="footer-link"><li>Contact</li></Link>
+            <Link to="/privacy-policy" className="footer-link"><li>Privacy Policy</li></Link>
           </ul>
         </nav>
         <div className="footer-social">

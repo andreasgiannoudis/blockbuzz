@@ -30,9 +30,9 @@ const Header = () => {
         <Link to="/"><h1 className="logo" >BlockBuzz</h1></Link>
         <nav className="nav">
           <ul>
-            <li><Link to="/blobkbuzz">Home</Link></li>
-            <li><Link to="/blockbuzz/about">About us</Link></li>
-            <li><Link to="/blockbuzz/contact">Contact</Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About us</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
       </div>
